@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.d-flex {
   display: flex;
+}
+
+.f-column {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.grow1 {
+  flex: 1;
+}
+
+.grow2 {
+  flex: 2;
+}
+
+.grow3 {
+  flex: 3;
+}
+
+
+.p50 {
+  padding: 50px;
+}
+
+.p5 {
+  padding: 5px;
+}
+
+.pt50 {
+  padding-top: 50px;
+}
+
+input {
+  padding: 10px;
+  font-size: 25px;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: #2cdf1f;
+
+}
+.link {
   color: white;
+  text-decoration: solid;
+  padding: 7px;
+  background-color: #049415;
+  
+}
+.green{
+  color: white;
+  background-color: #049415;
 }
 
-.App-link {
-  color: #61dafb;
+.forest {
+  height: 250px;
+  width: 250px;
+  margin: 5px;
+  border: 1px solid black;
+  background-color: rgb(149, 240, 143);
+}
+.card {
+  height: 250px;
+  width: 100px;
+  margin: 5px;
+  border: 1px solid black;
+  background-color: whitesmoke;
+}
+.card-large {
+  height: 500px;
+  width: 300px;
+  margin: 5px;
+  border: 1px solid black;
+  background-color: whitesmoke;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-image{
+  max-width: 60%;
+}
+
+.btn {
+  height: 50px;
+  width: 240px;
+   text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  text-align: center;
+  background-color: #2cdf1f;
+  justify-content: space-around;
+}
+.small {
+  height: 33px;
+  width: 100px;
+}
+
+.checkout {
+  font-size: x-large;
+}
+:hover.btn{
+  background-color: #049415;
+  cursor: pointer
+}
+:hover.with-link {
+  border: 1px solid orangered;
+  transform: scale(1.1);
+  cursor: pointer
+}
+
+
+
+.prodContainer {
+  width: 100%;
+  margin: 10px;
+  border: 1px solid black;
+  height: 500px;
+  overflow: auto;
+}
+.addProd {
+  width: 100%;
+  background-color: #e5e5e5;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.prod {
+  margin: 5px;
+  width: 150px;
+  box-sizing: border-box;
+}
+
+.prod img {
+  width: 100%;
+}
+
+.selected {
+  border: 2px solid orange;
+}
+
+a {
+  margin: 10px;
+}
+
+.post {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid black;
 }
