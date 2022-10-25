@@ -13,7 +13,7 @@ function App() {
     land: 0,
     seeds: 0,
     water: 0,
-    money: 30,
+    money: 40,
     trees: 0
   })
   const [forests, setForests] = useState([])

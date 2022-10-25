@@ -57,6 +57,17 @@ input {
   color: white;
   background-color: #049415;
 }
+.timer-container{
+  margin-left: 25px;
+  height: 5px;
+  width: 80%;
+  background-color: white;
+}
+.timer-counter{
+  height: 5px;
+  width: 100%;
+  background-color: #049415;
+}
 
 .forest {
   height: 250px;

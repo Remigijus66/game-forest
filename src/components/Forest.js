@@ -1,13 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Forest = ({ forest, index, assets, setAssets, forests, setForests }) => {
 
-  // const nav = useNavigate()
+  const [seconds, setSeconds] = useState(0)
+  const [timer, setTimer] = useState(false);
+  const [progres, setProgres] = useState(0)
 
-  // const navigate = () => {
-  //   nav("/item/" + item.id)
-  // }
+  useEffect(() => {
+    if (seconds === 0) {
+      setTimer(false);
+      setSeconds(20);
+      return;
+    }
+    if (timer) {
+      const timer = setTimeout(() => {
+        setSeconds(seconds - 1);
+        setProgres((21 - seconds) * 100 / 20)
+        clearTimeout(timer);
+      }, 1000)
+    }
+    // console.log('seconds', seconds)
+    // console.log('progress', progres)
+  }, [seconds, timer]);
+
+
+  const countTime = () => {
+    console.log('time', timer);
+    setTimer(true)
+  }
+
   const [ready, setReady] = useState(false)
 
   const addSeeds = () => {
@@ -35,12 +58,12 @@ const Forest = ({ forest, index, assets, setAssets, forests, setForests }) => {
     console.log('forests', forests)
   }
   const grow = async () => {
+    countTime()
     function timeout(delay) {
       return new Promise(res => setTimeout(res, delay));
     }
-    await timeout(10000)
+    await timeout(20000)
     console.log('time')
-
     const forestsCopy = { ...forests }
     // forests[index].trees = forests[index].seeds
 
@@ -72,8 +95,10 @@ const Forest = ({ forest, index, assets, setAssets, forests, setForests }) => {
       <div>Seeds: {forest.seeds} <button onClick={addSeeds}>Add Seeds</button></div>
       <div>Water: {forest.water} <button onClick={addWater}>Add Water</button></div>
       {(forest.seeds > 0 && forest.water > 0) && <button className='btn' onClick={grow}> Let the forest grow </button>}
+      {timer && <div className='timer-container'> <div className='timer-counter' style={{ width: progres + '%' }}> </div></div>}
       {ready && <div> Ready </div>}
       <div>Trees: {forest.trees} {forest.trees > 0 && <button onClick={harvest}>Harvest</button>}</div>
+
 
       {/* <h3>{item.name}</h3>
       <h5>Price {item.price}</h5>
